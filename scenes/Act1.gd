@@ -59,11 +59,11 @@ func _complain(time):
 # entering elevator...
 func _act1():
 	print_debug("starting act 1 p/ 1")
-	yield(get_tree().create_timer(1), "timeout")
+	yield(get_tree().create_timer(7), "timeout")
 	_toggle_door()
 	# they enter the elevator
 	emit_signal("move_inside")
-	yield(get_tree().create_timer(1), "timeout")
+	yield(get_tree().create_timer(2), "timeout")
 	_say1("Can you take us to the 10th floor?", 0.05)
 	yield($"../Dialog", "done")
 	# configuration to act 2:
@@ -74,7 +74,7 @@ func _act1():
 # conversation while going up
 func _act2():
 	print_debug("starting act 1 p/ 2")
-	yield(get_tree().create_timer(7), "timeout")
+	yield(get_tree().create_timer(5), "timeout")
 	# A
 	_say1("So, about what you were saying...", 0.06)
 	yield($"../Dialog", "done")

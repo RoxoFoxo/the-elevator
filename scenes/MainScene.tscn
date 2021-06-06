@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Elevator.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/DefaultFloor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/MainScene.gd" type="Script" id=5]
 [ext_resource path="res://scenes/Dialog.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Act1.gd" type="Script" id=7]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.5
@@ -58,4 +59,9 @@ material/0 = SubResource( 6 )
 
 [node name="Dialog" parent="." instance=ExtResource( 6 )]
 
+[node name="Act1" type="Node" parent="."]
+script = ExtResource( 7 )
+
 [connection signal="pressing_big_red_button" from="Player" to="." method="_on_Player_pressing_big_red_button"]
+[connection signal="done" from="Dialog" to="Act1" method="_on_Dialog_done"]
+[connection signal="finished" from="Act1" to="." method="_on_Act1_finished"]

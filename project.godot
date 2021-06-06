@@ -10,7 +10,8 @@ config_version=4
 
 [application]
 
-config/name="elevator"
+config/name="the-elevator"
+run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [global]

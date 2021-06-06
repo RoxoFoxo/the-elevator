@@ -11,6 +11,7 @@ var queue = []
 
 func add_say(string, time):
 	queue.append([string, time])
+	return self
 
 func next_say():
 	var sound_next = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/Elevator.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://scenes/LadyA.gd" type="Script" id=9]
 [ext_resource path="res://scenes/LadyB.gd" type="Script" id=10]
 [ext_resource path="res://scenes/EndingFloor.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/tim.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/bensound-theelevatorbossanova.mp3" type="AudioStream" id=13]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.5
@@ -83,6 +85,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1 )
 
 [node name="LadyB_Position3D" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1 )
+
+[node name="TimSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -12.0
 
 [connection signal="pressing_big_red_button" from="Player" to="." method="_on_Player_pressing_big_red_button"]
 [connection signal="finished" from="Act1" to="." method="_on_Act1_finished"]

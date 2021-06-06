@@ -8,8 +8,8 @@ var next = true
 # [[string, time, sound], ...]
 var queue = []
 
-func add_say(string, time):
-	queue.append([string, time])
+func add_say(string, time, audio):
+	queue.append([string, time, audio])
 
 func _process(delta):
 	if next:
@@ -25,6 +25,7 @@ func _next_say():
 		var q = queue.pop_front()
 		var string = String(q[0])
 		var time = q[1]
+		$AudioStreamPlayer.stream = q[2]
 		
 		for x in string:
 			yield(get_tree().create_timer(time), "timeout")

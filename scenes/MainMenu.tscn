@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/fonts/Orbitron/static/Orbitron-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=5]
 size = 39
 font_data = ExtResource( 2 )
 
@@ -19,7 +19,7 @@ font_data = ExtResource( 4 )
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 30
 font_data = ExtResource( 3 )
 
@@ -56,7 +56,7 @@ margin_left = -185.225
 margin_top = -236.548
 margin_right = 183.775
 margin_bottom = -61.5481
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = 10
 text = "The Elevator"
@@ -166,7 +166,7 @@ margin_left = -86.3871
 margin_top = -44.1163
 margin_right = 82.6129
 margin_bottom = 8.88376
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "PLAY"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -87,6 +87,8 @@ func _act2():
 	_say("only bad things happens with fammous people", 0.05)
 	_say("even more if you have a BlueBird account", 0.05)
 	yield($"../Dialog", "done")
+	# "nossa ta faltando algo: aparece a msuica do elevador"
+	# "nossa gostaria de saber minha aparencia: aparece o espelho"
 	act = 3
 	print_debug("act 1 p/ 2 done")
 

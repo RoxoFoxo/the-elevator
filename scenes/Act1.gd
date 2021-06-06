@@ -48,10 +48,10 @@ func _complain(time):
 		_say1("For gods sake, can you press the button?", 0.05)
 		complain = 3
 	if time > 30 and complain == 3:
-		_say1("Are you really keep us all waiting???", 0.07)
+		_say1("Are you really gonna keep us waiting???", 0.07)
 		complain = 4
 	if time > 60 and complain == 4:
-		_say1("Fuck you Im gonna press it myself", 0.08)
+		_say1("Ah, whatever. I'm gonna press it myself", 0.08)
 		button_pressed()
 	yield($"../Dialog", "done")
 
@@ -63,7 +63,7 @@ func _act1():
 	# they enter the elevator
 	emit_signal("move_inside")
 	yield(get_tree().create_timer(1), "timeout")
-	_say1("Can you let us on the 10st floor?", 0.05)
+	_say1("Can you take us to the 10th floor?", 0.05)
 	yield($"../Dialog", "done")
 	# configuration to act 2:
 	needs_press = true
@@ -75,30 +75,30 @@ func _act2():
 	print_debug("starting act 1 p/ 2")
 	yield(get_tree().create_timer(7), "timeout")
 	# A
-	_say1("So, about what you are saying...", 0.06)
+	_say1("So, about what you were saying...", 0.06)
 	yield($"../Dialog", "done")
-	_say1("nowadays its easy to missunderstand people", 0.05)
+	_say1("nowadays it's so easy to misunderstand people", 0.05)
 	yield($"../Dialog", "done")
 	_say1("did you know that my boyfrind thought that I" +
-	" was pregnant just because I wanted a pinaple on my milkshake?", 0.05)
+	" was pregnant just because I wanted a pineapple on my milkshake?", 0.05)
 	yield($"../Dialog", "done")
 	# = pause
 	yield(get_tree().create_timer(1), "timeout")
 	# B
-	_say2("... for sure, this happens to me everytime!", 0.05)
+	_say2("... for sure, that happens to me all the time!", 0.05)
 	yield($"../Dialog", "done")
 	# pause
 	yield(get_tree().create_timer(7), "timeout")
 	_say2("so... ...", 0.1)
 	yield($"../Dialog", "done")
-	_say2("this elevator is strange... its almost something is missing", 0.05)
+	_say2("this elevator is strange... its almost like something is missing", 0.05)
 	yield($"../Dialog", "done")
 	_say2("maybe music?", 0.05)
 	yield($"../Dialog", "done")
 	# = pause
 	yield(get_tree().create_timer(1), "timeout")
 	# A
-	_say1("Oh you right, but I can solve that...", 0.05)
+	_say1("Oh you're right, but I can solve that...", 0.05)
 	yield($"../Dialog", "done")
 	# + RADIO
 	$"../Music".play(0)
@@ -108,18 +108,18 @@ func _act2():
 	# B
 	_say2("Oh my god", 0.12)
 	yield($"../Dialog", "done")
-	_say2("Are you walking with radios on your poket now?", 0.05)
+	_say2("Are you walking with radios on your pocket now?", 0.05)
 	yield($"../Dialog", "done")
 	# = pause
 	yield(get_tree().create_timer(1), "timeout")
 	# A
-	_say1("Its from my boyfriend, he will not miss it out haha", 0.05)
+	_say1("Its from my boyfriend, he won't miss it haha", 0.05)
 	yield($"../Dialog", "done")
 	# B
-	_say2("Oh my god Bety, you are so mean", 0.09)
+	_say2("Oh my god Betty, you are so mean", 0.09)
 	yield($"../Dialog", "done")
 	# A
-	_say1("you know how I'am haha", 0.07)
+	_say1("you know how I am haha", 0.07)
 	yield($"../Dialog", "done")
 	# = pause
 	yield(get_tree().create_timer(7), "timeout")
@@ -134,7 +134,7 @@ func _act2():
 	# B
 	_say2("Never", 0.08)
 	yield($"../Dialog", "done")
-	_say2("I dont like to be famous", 0.05)
+	_say2("I don't like to be famous", 0.05)
 	yield($"../Dialog", "done")
 	_say2("only bad things happens with fammous people", 0.05)
 	yield($"../Dialog", "done")
@@ -153,7 +153,7 @@ func _act2():
 	# = pause
 	yield(get_tree().create_timer(1), "timeout")
 	# A
-	_say1("You know... you need to be updated with the world thrends", 0.05)
+	_say1("You know... you need to be updated with the world trends", 0.05)
 	yield($"../Dialog", "done")
 	# = pause
 	yield(get_tree().create_timer(1), "timeout")
@@ -168,7 +168,7 @@ func _act2():
 	_say1("... I wonder how is my look right now", 0.05)
 	yield($"../Dialog", "done")
 	# B
-	_say2("Dont worry Bety", 0.07)
+	_say2("Dont worry Betty", 0.07)
 	yield($"../Dialog", "done")
 	_say2("I can solve that for you", 0.05)
 	yield($"../Dialog", "done")
@@ -177,7 +177,7 @@ func _act2():
 	# = pause
 	yield(get_tree().create_timer(5), "timeout")
 	# A
-	_say1("what, were did you find something like that?", 0.03)
+	_say1("what, where did you find something like that?", 0.03)
 	yield($"../Dialog", "done")
 	# B
 	_say2("I bought it on the dollar store", 0.05)
@@ -193,10 +193,10 @@ func _act2():
 	_say2("Are you gonna stream it?", 0.04)
 	yield($"../Dialog", "done")
 	# A
-	_say1("for sure, my fans cant wait", 0.05)
+	_say1("for sure, my fans can't wait", 0.05)
 	yield($"../Dialog", "done")
 	# B
-	_say2("Haha Bety, you are so mean", 0.04)
+	_say2("Haha Betty, you are so mean", 0.04)
 	yield($"../Dialog", "done")
 	# = pause
 	yield(get_tree().create_timer(2), "timeout")

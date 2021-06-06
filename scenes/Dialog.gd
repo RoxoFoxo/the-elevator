@@ -3,9 +3,7 @@ extends Control
 signal done
 
 func _ready():
-	add_say("Lorem Ipsum has been the industry's standard dummy text ever " +
-	"since the 1500s, when an unknown printer took a galley of type and " +
-	"scrambled it to make a type specimen book.", 0.05)
+	
 	next_say()
 
 # [[string, time, sound], ...]
@@ -31,7 +29,6 @@ func next_say():
 				sound_next = false
 			else:
 				sound_next = true
-
 	else:
 		emit_signal("done")
 

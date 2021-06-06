@@ -1,5 +1,7 @@
 extends KinematicBody
 
+signal pressing_big_red_button
+
 onready var camera = $Pivot/Camera
 
 var gravity = -100
@@ -26,13 +28,16 @@ func get_input():
 
 func _unhandled_input(event):
 	if event is InputEventKey and Input.is_action_just_pressed("use"):
-		print(event, "grab")
+		var ray = $Pivot/Camera/RayCast
+		if ray.is_colliding():
+			emit_signal("pressing_big_red_button")
+		
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Pivot.rotate_x(-event.relative.y * mouse_sensitivity)
 		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.5, 1.5)
 	#if event is Input.is_action_just_pressed("use"):
-		
+
 func _physics_process(delta):
 	velocity.y = gravity * delta
 	var desired_velocity = get_input() * max_speed

@@ -5,21 +5,21 @@
 [ext_resource path="res://assets/ElevatorDoorLeft.png" type="Texture" id=3]
 [ext_resource path="res://assets/ElevatorWalls.png" type="Texture" id=4]
 [ext_resource path="res://assets/AudioBox.png" type="Texture" id=5]
-[ext_resource path="res://scenes/Door.gd" type="Script" id=6]
+[ext_resource path="res://scenes/Elevator.gd" type="Script" id=7]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 0, 1.1 )
 
 [sub_resource type="PlaneMesh" id=2]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=45]
 albedo_texture = ExtResource( 2 )
 roughness = 0.0
 
 [sub_resource type="PlaneMesh" id=4]
 size = Vector2( 0.1, 1 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=46]
 albedo_texture = ExtResource( 1 )
 uv1_scale = Vector3( 0.8, 1, 1 )
 uv1_offset = Vector3( 0.2, 0, 0 )
@@ -38,16 +38,16 @@ size = Vector2( 2, 1.5 )
 [sub_resource type="BoxShape" id=9]
 extents = Vector3( 0.25, 0.05, 0.75 )
 
-[sub_resource type="BoxShape" id=10]
+[sub_resource type="BoxShape" id=47]
 extents = Vector3( 0.25, 0.05, 0.75 )
 
-[sub_resource type="BoxShape" id=11]
+[sub_resource type="BoxShape" id=48]
 extents = Vector3( 0.5, 0.05, 0.125 )
 
-[sub_resource type="CubeMesh" id=12]
+[sub_resource type="CubeMesh" id=49]
 size = Vector3( 0.5, 0.1, 1.5 )
 
-[sub_resource type="SpatialMaterial" id=13]
+[sub_resource type="SpatialMaterial" id=50]
 albedo_texture = ExtResource( 4 )
 roughness = 0.0
 uv1_scale = Vector3( 1, 2, 1 )
@@ -103,22 +103,22 @@ emission_energy = 5.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="PlaneMesh" id=28]
+[sub_resource type="PlaneMesh" id=51]
 material = SubResource( 27 )
 size = Vector2( 1, 1 )
 
-[sub_resource type="CubeMesh" id=29]
+[sub_resource type="CubeMesh" id=52]
 size = Vector3( 0.3, 0.05, 0.5 )
 
 [sub_resource type="SpatialMaterial" id=30]
 albedo_color = Color( 0.529412, 0.529412, 0.529412, 1 )
 
-[sub_resource type="CylinderMesh" id=31]
+[sub_resource type="CylinderMesh" id=53]
 top_radius = 0.1
 bottom_radius = 0.1
 height = 0.1
 
-[sub_resource type="SpatialMaterial" id=32]
+[sub_resource type="SpatialMaterial" id=54]
 albedo_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="BoxShape" id=33]
@@ -138,11 +138,11 @@ size = Vector2( 0.5, 0.25 )
 [sub_resource type="CubeMesh" id=37]
 size = Vector3( 0.5, 0.25, 0.2 )
 
-[sub_resource type="SpatialMaterial" id=38]
+[sub_resource type="SpatialMaterial" id=55]
 albedo_color = Color( 0, 0, 0, 1 )
 roughness = 0.0
 
-[sub_resource type="CubeMesh" id=39]
+[sub_resource type="CubeMesh" id=56]
 size = Vector3( 0.5, 1.3, 0.05 )
 
 [sub_resource type="SpatialMaterial" id=40]
@@ -171,6 +171,7 @@ uv1_scale = Vector3( 3, 1, 1 )
 extents = Vector3( 0.25, 0.65, 0.05 )
 
 [node name="Elevator" type="Spatial"]
+script = ExtResource( 7 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0 )
@@ -184,12 +185,12 @@ shape = SubResource( 1 )
 
 [node name="Floor_MeshInstance" type="MeshInstance" parent="Floor"]
 mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+material/0 = SubResource( 45 )
 
 [node name="DoorFloor_MeshInstance" type="MeshInstance" parent="Floor"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1.05 )
 mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
+material/0 = SubResource( 46 )
 
 [node name="BackWall" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, -1 )
@@ -212,16 +213,16 @@ shape = SubResource( 9 )
 
 [node name="RightArch" type="CollisionShape" parent="FrontWall"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.05, 0.25 )
-shape = SubResource( 10 )
+shape = SubResource( 47 )
 
 [node name="TopArch" type="CollisionShape" parent="FrontWall"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, -0.38 )
-shape = SubResource( 11 )
+shape = SubResource( 48 )
 
 [node name="LeftMeshInstance" type="MeshInstance" parent="FrontWall"]
 transform = Transform( 1, 1.74846e-07, 1.52855e-14, 1.74846e-07, -1, -2.62268e-07, -3.0571e-14, 2.62268e-07, -1, -0.749999, -0.0500011, 0.25 )
-mesh = SubResource( 12 )
-material/0 = SubResource( 13 )
+mesh = SubResource( 49 )
+material/0 = SubResource( 50 )
 
 [node name="RightMeshInstance" type="MeshInstance" parent="FrontWall"]
 transform = Transform( 1, 1.74846e-07, 3.38813e-21, 1.74846e-07, -1, -8.74228e-08, -1.52855e-14, 8.74228e-08, -1, 0.75, -0.0500003, 0.25 )
@@ -285,21 +286,23 @@ material/0 = SubResource( 23 )
 
 [node name="MeshInstance5" type="MeshInstance" parent="Roof"]
 transform = Transform( -4.37114e-08, 8.74228e-08, 1, -8.74228e-08, 1, -8.74228e-08, -1, -8.74228e-08, -4.37114e-08, 0, 0, 0 )
-mesh = SubResource( 28 )
+mesh = SubResource( 51 )
 material/0 = null
 
 [node name="Button" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.75, 1 )
+collision_layer = 2
+collision_mask = 2
 
 [node name="ButtonMeshInstance" type="MeshInstance" parent="Button"]
 transform = Transform( -1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 4.76837e-07 )
-mesh = SubResource( 29 )
+mesh = SubResource( 52 )
 material/0 = SubResource( 30 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Button"]
 transform = Transform( -1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 0 )
-mesh = SubResource( 31 )
-material/0 = SubResource( 32 )
+mesh = SubResource( 53 )
+material/0 = SubResource( 54 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Button"]
 shape = SubResource( 33 )
@@ -318,17 +321,16 @@ material/0 = null
 [node name="MeshInstance2" type="MeshInstance" parent="Radio"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.036 )
 mesh = SubResource( 37 )
-material/0 = SubResource( 38 )
+material/0 = SubResource( 55 )
 
 [node name="Door" type="Spatial" parent="."]
-script = ExtResource( 6 )
 
 [node name="Left" type="StaticBody" parent="Door"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Door/Left"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.65, 0.075 )
-mesh = SubResource( 39 )
+mesh = SubResource( 56 )
 material/0 = SubResource( 40 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Door/Left"]
@@ -346,3 +348,12 @@ material/0 = SubResource( 43 )
 [node name="CollisionShape" type="CollisionShape" parent="Door/Right"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.6, 0.05 )
 shape = SubResource( 44 )
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03828, 0.722184, 0.0255206 )
+extents = Vector3( 1.08218, 0.789881, 1.05908 )
+origin_offset = Vector3( 0.0380859, -0.00683594, 0.0078125 )
+interior_enable = true
+interior_ambient_color = Color( 0.184314, 0.360784, 0.454902, 1 )
+
+[connection signal="input_event" from="Button" to="Door" method="_on_Button_input_event"]

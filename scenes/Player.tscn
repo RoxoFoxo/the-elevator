@@ -18,3 +18,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0 )
 
 [node name="Camera" type="Camera" parent="Pivot"]
 current = true
+
+[node name="RayCast" type="RayCast" parent="Pivot/Camera"]
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, 0, -1 )
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false

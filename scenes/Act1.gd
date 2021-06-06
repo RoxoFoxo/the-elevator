@@ -80,7 +80,7 @@ func _act2():
 	yield($"../Dialog", "done")
 	_say1("nowadays it's so easy to misunderstand people", 0.05)
 	yield($"../Dialog", "done")
-	_say1("did you know that my boyfrind thought that I" +
+	_say1("did you know that my boyfriend thought that I" +
 	" was pregnant just because I wanted a pineapple on my milkshake?", 0.05)
 	yield($"../Dialog", "done")
 	# = pause
@@ -137,7 +137,7 @@ func _act2():
 	yield($"../Dialog", "done")
 	_say2("I don't like to be famous", 0.05)
 	yield($"../Dialog", "done")
-	_say2("only bad things happens with fammous people", 0.05)
+	_say2("only bad things happens with famous people", 0.05)
 	yield($"../Dialog", "done")
 	_say2("even more if you have a BlueBird account", 0.05)
 	yield($"../Dialog", "done")

@@ -115,7 +115,7 @@ volume_db = -12.0
 
 [connection signal="pressing_big_red_button" from="Player" to="." method="_on_Player_pressing_big_red_button"]
 [connection signal="finished" from="Act1" to="." method="_on_Act1_finished"]
-[connection signal="move_inside" from="Act1" to="LadyA" method="_on_Act1_move_inside"]
 [connection signal="move_inside" from="Act1" to="LadyB" method="_on_Act1_move_inside"]
-[connection signal="move_outside" from="Act1" to="LadyA" method="_on_Act1_move_outside"]
+[connection signal="move_inside" from="Act1" to="LadyA" method="_on_Act1_move_inside"]
 [connection signal="move_outside" from="Act1" to="LadyB" method="_on_Act1_move_outside"]
+[connection signal="move_outside" from="Act1" to="LadyA" method="_on_Act1_move_outside"]

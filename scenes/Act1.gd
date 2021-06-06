@@ -18,6 +18,7 @@ signal finished
 
 # move characters
 signal move_inside
+signal move_outside
 
 # from MainScene
 func run():
@@ -210,6 +211,7 @@ func _act2():
 	# B
 	_say2("I know right?", 0.05)
 	yield($"../Dialog", "done")
+	emit_signal("move_outside")
 	# = pause
 	yield(get_tree().create_timer(5), "timeout")
 	# DONE

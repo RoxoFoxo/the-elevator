@@ -1,6 +1,7 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=96 format=2]
 
 [ext_resource path="res://scenes/WoodenDoor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/BALL.png" type="Texture" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 6, 8 )
@@ -266,7 +267,7 @@ size = Vector3( 0.25, 0.1, 1.35 )
 [sub_resource type="SpatialMaterial" id=84]
 albedo_color = Color( 0.376471, 0.113725, 0, 1 )
 
-[sub_resource type="CapsuleShape" id=90]
+[sub_resource type="CapsuleShape" id=85]
 radius = 0.131634
 height = 0.7651
 
@@ -282,6 +283,16 @@ size = Vector3( 0.25, 0.4, 0.125 )
 
 [sub_resource type="CubeMesh" id=89]
 size = Vector3( 0.1, 0.4, 0.1 )
+
+[sub_resource type="PhysicsMaterial" id=90]
+bounce = 0.5
+
+[sub_resource type="SphereShape" id=91]
+
+[sub_resource type="SphereMesh" id=92]
+
+[sub_resource type="SpatialMaterial" id=93]
+albedo_texture = ExtResource( 2 )
 
 [node name="EndingFloor" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
@@ -730,7 +741,7 @@ transform = Transform( 0.148329, 0.0662391, 0.986717, -0.00984679, 0.997804, -0.
 
 [node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 90 )
+shape = SubResource( 85 )
 
 [node name="MeshInstance" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.4, 0 )
@@ -751,3 +762,19 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, -0.3, 0 )
 mesh = SubResource( 89 )
 material/0 = null
+
+[node name="BeachBall" type="RigidBody" parent="."]
+transform = Transform( 0.913886, 0.405971, 0, -0.405971, 0.913886, 0, 0, 0, 1, 0.205678, 1.3016, -2.8891 )
+physics_material_override = SubResource( 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="BeachBall"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+shape = SubResource( 91 )
+
+[node name="MeshInstance" type="MeshInstance" parent="BeachBall"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+mesh = SubResource( 92 )
+material/0 = SubResource( 93 )

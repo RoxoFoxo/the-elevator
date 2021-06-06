@@ -40,7 +40,7 @@ func _act1():
 	yield(get_tree().create_timer(20), "timeout")
 	_say1("Im serious, the game is over...", 0.06)
 	yield($"../Dialog", "done")
-	_say1("our dev team dont had much more time to work", 0.06)
+	_say1("our dev team didn't have much time to work", 0.06)
 	yield($"../Dialog", "done")
 	_say1("so yea, this is the end", 0.06)
 	yield($"../Dialog", "done")

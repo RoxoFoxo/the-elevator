@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/Elevator.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/tim.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/theelevatorbossanova.mp3" type="AudioStream" id=13]
 [ext_resource path="res://scenes/Act2.gd" type="Script" id=14]
+[ext_resource path="res://scenes/MaleCharacter.tscn" type="PackedScene" id=15]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.5
@@ -45,7 +46,21 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 2
 
 [node name="EndingFloor" parent="." instance=ExtResource( 11 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0, 5.15 )
-visible = false
+
+[node name="MaleCharacter" parent="EndingFloor" instance=ExtResource( 15 )]
+transform = Transform( 0.00743515, 0, 0.999972, 0, 1, 0, -0.999972, 0, 0.00743515, 2.471, 0.5, 0.13769 )
+
+[node name="MaleCharacter2" parent="EndingFloor" instance=ExtResource( 15 )]
+transform = Transform( -0.906264, 0, -0.422713, 0, 1, 0, 0.422713, 0, -0.906264, -0.00348663, 0.5, 1.24786 )
+
+[node name="MaleCharacter3" parent="EndingFloor" instance=ExtResource( 15 )]
+transform = Transform( -0.865291, 0, 0.501269, 0, 1, 0, -0.501269, 0, -0.865291, 1.57979, 0.5, 1.28439 )
+
+[node name="MaleCharacter4" parent="EndingFloor" instance=ExtResource( 15 )]
+transform = Transform( -0.113567, 0, 0.99353, 0, 1, 0, -0.99353, 0, -0.113567, -0.88748, 0.5, -0.387563 )
+
+[node name="MaleCharacter5" parent="EndingFloor" instance=ExtResource( 15 )]
+transform = Transform( -0.025444, 0, 0.999676, 0, 1, 0, -0.999676, 0, -0.025444, -2.6806, 0.5, -1.03675 )
 
 [node name="BeachBall" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.469497, 0.464729, 0.578912 )
@@ -99,5 +114,7 @@ volume_db = -12.0
 
 [connection signal="pressing_big_red_button" from="Player" to="." method="_on_Player_pressing_big_red_button"]
 [connection signal="finished" from="Act1" to="." method="_on_Act1_finished"]
-[connection signal="move_inside" from="Act1" to="LadyA" method="_on_Act1_move_inside"]
 [connection signal="move_inside" from="Act1" to="LadyB" method="_on_Act1_move_inside"]
+[connection signal="move_inside" from="Act1" to="LadyA" method="_on_Act1_move_inside"]
+[connection signal="move_outside" from="Act1" to="LadyB" method="_on_Act1_move_outside"]
+[connection signal="move_outside" from="Act1" to="LadyA" method="_on_Act1_move_outside"]

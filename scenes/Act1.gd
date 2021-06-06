@@ -58,6 +58,7 @@ func _act1():
 	yield(get_tree().create_timer(1), "timeout")
 	_toggle_door()
 	# TODO: add trigger to person enter the elevator
+	$"../LadyA".move_inside()
 	yield(get_tree().create_timer(1), "timeout")
 	_say("Can you let us on the 10st floor?", 0.05)
 	yield($"../Dialog", "done")

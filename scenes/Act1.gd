@@ -44,10 +44,10 @@ func _complain(time):
 	if time > 15 and complain == 2:
 		_say("For gods sake, can you press the button?", 0.05)
 		complain = 3
-	if time > 30 and complain == 2:
+	if time > 30 and complain == 3:
 		_say("Are you really keep us all waiting???", 0.03)
 		complain = 4
-	if time > 60 and complain == 2:
+	if time > 60 and complain == 4:
 		_say("Fuck you Im gonna press it myself", 0.02)
 		button_pressed()
 	yield($"../Dialog", "done")

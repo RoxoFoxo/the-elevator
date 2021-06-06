@@ -276,10 +276,11 @@ top_radius = 0.1
 bottom_radius = 0.1
 height = 0.1
 
+[sub_resource type="SpatialMaterial" id=94]
+albedo_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+
 [sub_resource type="CubeMesh" id=87]
 size = Vector3( 0.25, 0.4, 0.125 )
-
-[sub_resource type="SpatialMaterial" id=88]
 
 [sub_resource type="CubeMesh" id=89]
 size = Vector3( 0.1, 0.4, 0.1 )
@@ -746,22 +747,22 @@ shape = SubResource( 85 )
 [node name="MeshInstance" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.4, 0 )
 mesh = SubResource( 86 )
-material/0 = null
+material/0 = SubResource( 94 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
 mesh = SubResource( 87 )
-material/0 = SubResource( 88 )
+material/0 = SubResource( 94 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, -0.3, 0 )
 mesh = SubResource( 89 )
-material/0 = null
+material/0 = SubResource( 94 )
 
 [node name="MeshInstance4" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, -0.3, 0 )
 mesh = SubResource( 89 )
-material/0 = null
+material/0 = SubResource( 94 )
 
 [node name="BeachBall" type="RigidBody" parent="."]
 transform = Transform( 0.913886, 0.405971, 0, -0.405971, 0.913886, 0, 0, 0, 1, 0.205678, 1.3016, -2.8891 )

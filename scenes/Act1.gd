@@ -146,7 +146,7 @@ func _act2():
 	# A
 	_say1("Yeaaa...", 0.1)
 	yield($"../Dialog", "done")
-	_say1("I already blocked a bunch of crazzy people on that thing", 0.05)
+	_say1("I already blocked a bunch of crazy people on that thing", 0.05)
 	yield($"../Dialog", "done")
 	# B
 	_say2("Why do you even have one?", 0.05)
@@ -197,7 +197,7 @@ func _act2():
 	_say1("for sure, my fans can't wait", 0.05)
 	yield($"../Dialog", "done")
 	# B
-	_say2("Haha Betty, you are so mean", 0.04)
+	_say2("Haha yes Betty", 0.04)
 	yield($"../Dialog", "done")
 	# = pause
 	yield(get_tree().create_timer(2), "timeout")

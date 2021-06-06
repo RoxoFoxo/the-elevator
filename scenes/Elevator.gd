@@ -14,3 +14,7 @@ func toggle_door():
 		$Door/Left/MeshInstance.translate(Vector3(0.49, 0, 0))
 		$Door/Right/MeshInstance.translate(Vector3(0.49, 0, 0))
 		door_open = true
+
+func disable_collision():
+	$Door/Left/CollisionShape.disabled = true
+	$Door/Right/CollisionShape.disabled = true

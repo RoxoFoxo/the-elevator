@@ -11,7 +11,7 @@ var queue = []
 func add_say(string, time, audio):
 	queue.append([string, time, audio])
 
-func _process(delta):
+func _process(_delta):
 	if next:
 		next = false
 		_next_say()

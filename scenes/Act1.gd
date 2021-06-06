@@ -200,6 +200,9 @@ func _act2():
 	yield($"../Dialog", "done")
 	# = pause
 	yield(get_tree().create_timer(2), "timeout")
+	$"../DefaultFloor".visible = false
+	$"../EndingFloor".visible = true
+	$"../Elevator".disable_collision()
 	$"../TimSound".play(0)
 	_toggle_door()
 	_say1("Oh finally, this elevator is so slow", 0.07)

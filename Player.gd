@@ -12,6 +12,25 @@ var velocity = Vector3()
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pass
+
+func _input(event):
+	if event is InputEventKey and Input.is_action_just_pressed("use"):
+		var ray = $Pivot/Camera/RayCast
+		if ray.is_colliding():
+			emit_signal("pressing_big_red_button")
+		
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		rotate_y(-event.relative.x * mouse_sensitivity)
+		$Pivot.rotate_x(-event.relative.y * mouse_sensitivity)
+		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1, 1)
+	
+	if event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	if event.is_action_pressed("click"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func get_input():
 	var input_dir = Vector3()
@@ -25,18 +44,6 @@ func get_input():
 		input_dir += camera.global_transform.basis.x
 	input_dir = input_dir.normalized()
 	return input_dir
-
-func _unhandled_input(event):
-	if event is InputEventKey and Input.is_action_just_pressed("use"):
-		var ray = $Pivot/Camera/RayCast
-		if ray.is_colliding():
-			emit_signal("pressing_big_red_button")
-		
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(-event.relative.x * mouse_sensitivity)
-		$Pivot.rotate_x(-event.relative.y * mouse_sensitivity)
-		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.5, 1.5)
-	#if event is Input.is_action_just_pressed("use"):
 
 func _physics_process(delta):
 	velocity.y = gravity * delta

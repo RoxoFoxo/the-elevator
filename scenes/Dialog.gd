@@ -34,7 +34,7 @@ func _next_say():
 				sound_next = false
 			else:
 				sound_next = true
-		yield(get_tree().create_timer(3), "timeout")
+		yield(get_tree().create_timer(4), "timeout")
 		emit_signal("done")
 		next = true
 	else:

@@ -66,6 +66,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MadeBy2" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.059
+margin_top = -119.0
+margin_right = 158.941
+margin_bottom = -93.0
+rect_pivot_offset = Vector2( -100.983, -52.1838 )
+custom_fonts/font = SubResource( 2 )
+text = "Only working on chrome :("
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MadeBy" type="Label" parent="."]
 modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
@@ -75,7 +94,8 @@ anchor_bottom = 0.5
 margin_left = -134.0
 margin_top = 105.0
 margin_right = 137.0
-margin_bottom = 130.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( -100.983, -52.1838 )
 custom_fonts/font = SubResource( 2 )
 text = "Made by"
 align = 1

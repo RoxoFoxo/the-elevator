@@ -23,7 +23,7 @@ func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Pivot.rotate_x(-event.relative.y * mouse_sensitivity)
-		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1, 1)
+		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.5, 1.5)
 	
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

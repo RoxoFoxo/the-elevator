@@ -16,9 +16,9 @@ size = Vector3( 0.5, 0.5, 0.1 )
 [sub_resource type="CubeMesh" id=5]
 size = Vector3( 0.1, 0.35, 0.1 )
 
-[node name="KinematicBody" type="KinematicBody"]
-collision_layer = 16
-collision_mask = 16
+[node name="FemaleCharacter" type="KinematicBody"]
+collision_layer = 18
+collision_mask = 18
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )

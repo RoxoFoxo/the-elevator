@@ -11,6 +11,7 @@ func _on_Player_pressing_big_red_button():
 	$Act1.button_pressed()
 
 func _on_Act1_finished():
-	# TODO:
-	# Act2.run()
+	$DefaultFloor.visible = false
+	$EndingFloor.visible = true
+	$Act2.run()
 	pass

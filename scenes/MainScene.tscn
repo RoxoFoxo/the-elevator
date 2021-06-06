@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/Elevator.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scenes/EndingFloor.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/tim.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/theelevatorbossanova.mp3" type="AudioStream" id=13]
+[ext_resource path="res://scenes/Act2.gd" type="Script" id=14]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.5
@@ -72,6 +73,9 @@ material/0 = SubResource( 6 )
 [node name="Act1" type="Node" parent="."]
 script = ExtResource( 7 )
 
+[node name="Act2" type="Node" parent="."]
+script = ExtResource( 14 )
+
 [node name="LadyA" parent="." instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.3, 0.5, 2 )
 script = ExtResource( 9 )
@@ -95,5 +99,5 @@ volume_db = -12.0
 
 [connection signal="pressing_big_red_button" from="Player" to="." method="_on_Player_pressing_big_red_button"]
 [connection signal="finished" from="Act1" to="." method="_on_Act1_finished"]
-[connection signal="move_inside" from="Act1" to="LadyA" method="_on_Act1_move_inside"]
 [connection signal="move_inside" from="Act1" to="LadyB" method="_on_Act1_move_inside"]
+[connection signal="move_inside" from="Act1" to="LadyA" method="_on_Act1_move_inside"]

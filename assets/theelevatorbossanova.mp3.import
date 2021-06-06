@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/theelevatorbossanova.mp3-1fe3f1f4792fe9efe0cf4d50982f4af0.mp3str"
+
+[deps]
+
+source_file="res://assets/theelevatorbossanova.mp3"
+dest_files=[ "res://.import/theelevatorbossanova.mp3-1fe3f1f4792fe9efe0cf4d50982f4af0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

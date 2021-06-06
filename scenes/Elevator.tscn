@@ -129,18 +129,16 @@ extents = Vector3( 0.3, 0.15, 0.15 )
 
 [sub_resource type="SpatialMaterial" id=35]
 albedo_texture = ExtResource( 5 )
-roughness = 0.0
 
 [sub_resource type="PlaneMesh" id=36]
 material = SubResource( 35 )
 size = Vector2( 0.5, 0.25 )
 
 [sub_resource type="CubeMesh" id=37]
-size = Vector3( 0.5, 0.25, 0.2 )
+size = Vector3( 0.5, 0.25, 0.15 )
 
 [sub_resource type="SpatialMaterial" id=38]
 albedo_color = Color( 0, 0, 0, 1 )
-roughness = 0.0
 
 [sub_resource type="CubeMesh" id=39]
 size = Vector3( 0.5, 1.3, 0.05 )
@@ -319,7 +317,7 @@ mesh = SubResource( 36 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Radio"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.036 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, -0.00621849, -0.059482 )
 mesh = SubResource( 37 )
 material/0 = SubResource( 38 )
 

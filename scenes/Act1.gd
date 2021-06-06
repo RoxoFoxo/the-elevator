@@ -16,6 +16,9 @@ var act = 1
 # sends to the MainScene, so it can start another act
 signal finished
 
+# move characters
+signal move_inside
+
 # from MainScene
 func run():
 	run = true
@@ -57,8 +60,8 @@ func _act1():
 	print_debug("starting act 1 p/ 1")
 	yield(get_tree().create_timer(1), "timeout")
 	_toggle_door()
-	# TODO: add trigger to person enter the elevator
-	$"../LadyA".move_inside()
+	# they enter the elevator
+	emit_signal("move_inside")
 	yield(get_tree().create_timer(1), "timeout")
 	_say("Can you let us on the 10st floor?", 0.05)
 	yield($"../Dialog", "done")

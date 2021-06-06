@@ -26,6 +26,7 @@ func _process(delta):
 	if needs_press:
 		waiting = waiting + delta
 		_complain(waiting)
+		return
 	if act == 1:
 		act = 0
 		_act1()
@@ -37,23 +38,23 @@ func _process(delta):
 		emit_signal("finished")
 
 func _complain(time):
-	if time > 5000 and complain == 1:
+	if time > 5 and complain == 1:
 		_say("So... can you press the button?", 0.05)
 		complain = 2
-	if time > 15000 and complain == 2:
+	if time > 15 and complain == 2:
 		_say("For gods sake, can you press the button?", 0.05)
 		complain = 3
-	if time > 30000 and complain == 2:
+	if time > 30 and complain == 2:
 		_say("Are you really keep us all waiting???", 0.03)
 		complain = 4
-	if time > 60000 and complain == 2:
+	if time > 60 and complain == 2:
 		_say("Fuck you Im gonna press it myself", 0.02)
 		button_pressed()
 	yield($"../Dialog", "done")
 
 # entering elevator...
 func _act1():
-	print_debug("starting act 1")
+	print_debug("starting act 1 p/ 1")
 	yield(get_tree().create_timer(1), "timeout")
 	_toggle_door()
 	# TODO: add trigger to person enter the elevator
@@ -63,9 +64,11 @@ func _act1():
 	# configuration to act 2:
 	needs_press = true
 	act = 2
+	print_debug("act 1 p/ 1 done")
 
 # conversation while going up
 func _act2():
+	print_debug("starting act 1 p/ 2")
 	yield(get_tree().create_timer(2), "timeout")
 	# A
 	_say("So, about what you are saying", 0.05)
@@ -85,6 +88,7 @@ func _act2():
 	_say("even more if you have a BlueBird account", 0.05)
 	yield($"../Dialog", "done")
 	act = 3
+	print_debug("act 1 p/ 2 done")
 
 # from self and MainScene
 func button_pressed():

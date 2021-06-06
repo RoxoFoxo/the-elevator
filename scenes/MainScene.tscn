@@ -63,5 +63,4 @@ material/0 = SubResource( 6 )
 script = ExtResource( 7 )
 
 [connection signal="pressing_big_red_button" from="Player" to="." method="_on_Player_pressing_big_red_button"]
-[connection signal="done" from="Dialog" to="Act1" method="_on_Dialog_done"]
 [connection signal="finished" from="Act1" to="." method="_on_Act1_finished"]
